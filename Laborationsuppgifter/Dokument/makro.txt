@@ -1,0 +1,13 @@
+Sub BildAlternativText()
+'
+' BildAlternativText Makro
+'
+'
+For Each shp In ActiveDocument.InlineShapes
+    If shp.AlternativeText <> "" Then
+        shp.AlternativeText = ""
+    End If
+Next shp
+
+
+End Sub
