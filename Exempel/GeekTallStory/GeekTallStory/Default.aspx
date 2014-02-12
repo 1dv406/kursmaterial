@@ -25,24 +25,24 @@
             <menu />
         </header>
         <div id="main">
-        <%-- 
-        Repeater-kontrollen är i princip en deklarativ "for"-sats. För varje skröna som SelectMethod
-        tillhandahåller kommer innehållet i "ItemTemplate" att tjäna som en mall och rubriken (Header) 
-        och själva skrönan (Phrase) kommer att rendaras ut.
-        (För säkerhets skull använder jag Server.HtmlEncode (:) för att "sterilisera" eventuellt elaka taggar.)
-        --%>
-        <asp:Repeater ID="TallStoryRepeater" runat="server"
-            ItemType="GeekTallStory.Model.TallStory"
-            SelectMethod="TallStoryRepeater_GetData">
-            <ItemTemplate>
-                <h1>
-                    <%#: Item.Header %>
-                </h1>
-                <p>
-                    <%#: Item.Phrase %>
-                </p>
-            </ItemTemplate>
-        </asp:Repeater>
+            <%-- 
+                Repeater-kontrollen är i princip en deklarativ "for"-sats. För varje skröna som SelectMethod
+                tillhandahåller kommer innehållet i "ItemTemplate" att tjäna som en mall och rubriken (Header) 
+                och själva skrönan (Phrase) kommer att rendaras ut.
+                (För säkerhets skull använder jag Server.HtmlEncode (:) för att "sterilisera" eventuellt elaka taggar.)
+            --%>
+            <asp:Repeater ID="TallStoryRepeater" runat="server"
+                ItemType="GeekTallStory.Model.TallStory"
+                SelectMethod="TallStoryRepeater_GetData">
+                <ItemTemplate>
+                    <h1>
+                        <%#: Item.Header %>
+                    </h1>
+                    <p>
+                        <%#: Item.Phrase %>
+                    </p>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </div>
     <footer>

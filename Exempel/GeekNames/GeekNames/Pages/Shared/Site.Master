@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GeekNames.Pages.Shared.Site" ViewStateMode="Disabled" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Databundna kontrollrar</title>
+    <%: Styles.Render("~/Content/css") %>
+    <%: Scripts.Render("~/bundles/modernizr") %>
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="page">
+        <header>
+            <div id="header-group">
+                <ul id="top">
+                    <li>ASP.NET Web Forms (1DV406)</li>
+                    <li>Föreläsning</li>
+                    <li class="last">Exempel</li>
+                </ul>
+                <h1 id="logo-text">
+                    Databundna kontrollrar
+                </h1>
+            </div>
+            <menu />
+        </header>
+        <div id="main">
+            <form id="theForm" runat="server">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/se/">
+            <img id="Img1" alt="Creative Commons Erkännande-IckeKommersiell-DelaLika 2.5 Sverige licens." src="~/Content/images/cc-by-nc-sa.png" runat="server" /></a>
+        <span>Linnéuniversitetet | Fakulteten för teknik | Institutionen för datavetenskap</span>
+    </footer>
+    <asp:ContentPlaceHolder ID="ScriptContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F4B4E7A0-A6B9-4F94-BBC0-E92E434231C4}</ProjectGuid>
+    <ProjectGuid>{5818C4C5-A35D-4191-8884-67EA4C6C3ECF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GeekTallStory</RootNamespace>
-    <AssemblyName>GeekTallStory</AssemblyName>
+    <RootNamespace>DataboundFiles</RootNamespace>
+    <AssemblyName>DataboundFiles</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -77,22 +77,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\files\Introduktionslaboration.docx" />
+    <Content Include="Content\files\Introduktionslaboration.pdf" />
+    <Content Include="Content\files\Serverkontroller.pdf" />
+    <Content Include="Content\files\State Management.pdf" />
+    <Content Include="Content\files\Vad är ASP.NET.pdf" />
+    <Content Include="Content\files\Webbformulär.pdf" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Content\files\Readme.txt" />
+    <Content Include="Content\files\StyleSheet.css" />
+    <Content Include="Content\files\Version.txt" />
     <Content Include="Content\images\arrow-right.png" />
     <Content Include="Content\images\cc-by-nc-sa.png" />
+    <Content Include="Content\images\icon_document_empty_16.png" />
+    <Content Include="Content\images\icon_document_pdf2_16.png" />
+    <Content Include="Content\images\icon_document_text_16.png" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\typographic-base.css" />
     <Content Include="Default.aspx" />
-    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\modernizr-2.7.1.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\jquery-2.1.0.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Content\files\Default.aspx.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,9 +118,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model\DAL\TallStoryDAL.cs" />
+    <Compile Include="Model\FileData.cs" />
     <Compile Include="Model\Service.cs" />
-    <Compile Include="Model\TallStory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,7 +131,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -133,7 +146,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:41496/</IISUrl>
+          <IISUrl>http://localhost:1322/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
