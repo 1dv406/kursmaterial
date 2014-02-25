@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Error.aspx.cs" Inherits="GeekCustomer.Pages.Shared.Error" ViewStateMode="Disabled" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Error.aspx.cs" Inherits="GeekCustomer.Error" ViewStateMode="Disabled" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>Serverfel</title>
     <%: Styles.Render("~/Content/css") %>
     <%: Scripts.Render("~/bundles/modernizr") %>
@@ -19,7 +19,7 @@
                     <li class="last">Exempel</li>
                 </ul>
                 <h1 id="logo-text">
-                    Kundkontakter <span id="small-logo-text">(version 4, Routing + PRG)</span>
+                    Kundkontakter <span id="small_logo_text">(version 3, validering)</span>
                 </h1>
             </div>
             <menu />
@@ -29,7 +29,7 @@
                 Vi är beklagar att ett fel inträffade och vi inte kunde hantera din förfrågan.
             </p>
             <p>
-                <a href='<%$ RouteUrl:routename=Customers %>' runat="server">Tillbaka till listan med kunder</a>
+                <asp:HyperLink runat="server" NavigateUrl="~/" Text="Tillbaka till listan med kunder" />
             </p>
         </main>
     </div>

@@ -1,15 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Listing.aspx.cs" Inherits="GeekCustomer.Pages.CustomerPages.Listing" ViewStateMode="Disabled" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="GeekCustomer.Default" ViewStateMode="Disabled" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Kundkontakter (version 4, Routing + PRG)</title>
+    <title>Kundkontakter (version 3, validering)</title>
     <%: Styles.Render("~/Content/css") %>
     <%: Scripts.Render("~/bundles/modernizr") %>
 </head>
 <body>
-    <form id="theForm" runat="server">
     <div id="page">
         <header>
             <div id="header-group">
@@ -19,25 +18,20 @@
                     <li class="last">Exempel</li>
                 </ul>
                 <h1 id="logo-text">
-                    Kundkontakter <span id="small-logo-text">(version 4, Routing + PRG)</span>
+                    Kundkontakter <span id="small_logo_text">(version 3, validering)</span>
                 </h1>
             </div>
             <menu />
         </header>
         <div id="main">
+            <form id="theForm" runat="server">
             <h1>
                 Kunder
             </h1>
-            <asp:Panel runat="server" ID="MessagePanel" Visible="false" CssClass="icon-ok">
-                <asp:Literal runat="server" ID="MessageLiteral" />
-            </asp:Panel>
-            <div class="editor-field">
-                <asp:HyperLink runat="server" NavigateUrl='<%$ RouteUrl:routename=CustomersCreate %>' Text="Lägg till ny kund" />
-            </div>
-            <asp:ValidationSummary runat="server" HeaderText="Fel inträffade. Korrigera det som är fel och försök igen."
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Fel inträffade. Korrigera det som är fel och försök igen."
                 CssClass="validation-summary-errors" />
             <%-- 
-                    Visar alla kunder. Innehåller även kommandoknappar för att uppdatera och ta bort kunder.
+                    Visar alla kunder. Innehåller även kommandoknappar för att lägga till, uppdatera och ta bort kunder.
                     Hämtar alla kunduppgifter som finns i tabellen Customer i databasen via affärslogikklassen Service och 
                     metoden GetCustomers, som i sin tur använder klassen CustomerDAL och metoden GetCustomers, som skapar en
                     lista med referenser till Customer-objekt; ett Customer-objekt för varje post i tabellen. 
@@ -45,9 +39,11 @@
             <asp:ListView ID="CustomerListView" runat="server"
                 ItemType="GeekCustomer.Model.Customer"
                 SelectMethod="CustomerListView_GetData"
+                InsertMethod="CustomerListView_InsertItem"
                 UpdateMethod="CustomerListView_UpdateItem"
                 DeleteMethod="CustomerListView_DeleteItem"
-                DataKeyNames="CustomerId">
+                DataKeyNames="CustomerId"
+                InsertItemPosition="FirstItem">
                 <LayoutTemplate>
                     <table class="grid">
                         <tr>
@@ -102,6 +98,29 @@
                         </tr>
                     </table>
                 </EmptyDataTemplate>
+                <InsertItemTemplate>
+                    <%-- Mall för rad i tabellen för att lägga till nya kunduppgifter. Visas bara om InsertItemPosition 
+                     har värdet FirstItemPosition eller LasItemPosition.--%>
+                    <tr>
+                        <td>
+                            <asp:TextBox ID="Name" runat="server" Text='<%# BindItem.Name %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="Address" runat="server" Text='<%# BindItem.Address %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="PostalCode" runat="server" Text='<%# BindItem.PostalCode %>' class="postal-code" />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="City" runat="server" Text='<%# BindItem.City %>' />
+                        </td>
+                        <td>
+                            <%-- "Kommandknappar" för att lägga till en ny kunduppgift och rensa texfälten. Kommandonamnen är VIKTIGA! --%>
+                            <asp:LinkButton runat="server" CommandName="Insert" Text="Lägg till" />
+                            <asp:LinkButton runat="server" CommandName="Cancel" Text="Rensa" CausesValidation="false" />
+                        </td>
+                    </tr>
+                </InsertItemTemplate>
                 <EditItemTemplate>
                     <%-- Mall för rad i tabellen för att redigera kunduppgifter. --%>
                     <tr>
@@ -125,6 +144,7 @@
                     </tr>
                 </EditItemTemplate>
             </asp:ListView>
+            </form>
         </div>
     </div>
     <footer>
@@ -132,6 +152,5 @@
             <img alt="Creative Commons Erkännande-IckeKommersiell-DelaLika 2.5 Sverige licens." src="~/Content/images/cc-by-nc-sa.png" runat="server" /></a>
         <span>Linnéuniversitetet | Fakulteten för teknik | Institutionen för datavetenskap</span>
     </footer>
-    </form>
 </body>
 </html>

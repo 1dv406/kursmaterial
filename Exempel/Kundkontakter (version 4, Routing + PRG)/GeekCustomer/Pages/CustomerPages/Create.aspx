@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="GeekCustomer.Pages.CustomerPages.Create" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="GeekCustomer.Pages.CustomerPages.Create" ViewStateMode="Disabled" %>
 
 <!DOCTYPE html>
 
