@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GeekCustomer.Pages.Shared.Site" ViewStateMode="Disabled" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Kundkontakter (version 6, Master Page)</title>
+    <%: Styles.Render("~/Content/css") %>
+    <%: Scripts.Render("~/bundles/modernizr") %>
+<%-- Alternativ till att använda en "script bundle".     
+    <script src="<%= ResolveClientUrl("~/Scripts/modernizr-2.7.1.js") %>"></script>
+--%>
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server" />
+</head>
+<body>
+    <form id="theForm" runat="server">
+    <div id="page">
+        <header>
+            <div id="header-group">
+                <ul id="top">
+                    <li>ASP.NET Web Forms (1DV406)</li>
+                    <li>Föreläsning</li>
+                    <li class="last">Exempel</li>
+                </ul>
+                <h1 id="logo-text">
+                    Kundkontakter <span id="small-logo-text">(version 6, Master Page)</span>
+                </h1>
+            </div>
+            <menu />
+        </header>
+        <main role="main">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" />
+        </main>
+        <footer>
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/se/">
+                <img alt="Creative Commons Erkännande-IckeKommersiell-DelaLika 2.5 Sverige licens." src="~/Content/images/cc-by-nc-sa.png" runat="server" />
+            </a>
+            <span>Linnéuniversitetet | Fakulteten för teknik | Institutionen för datavetenskap</span>
+        </footer>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="ScriptContentPlaceHolder" runat="server" />
+</body>
+</html>
