@@ -19,7 +19,7 @@
                     <li class="last">Exempel</li>
                 </ul>
                 <h1 id="logo-text">
-                    Kundkontakter <span id="small-logo-text">(version 4, Routing + PRG)</span>
+                    Kundkontakter <span id="small-logo-text">(version 5, Flera sidor)</span>
                 </h1>
             </div>
             <menu />

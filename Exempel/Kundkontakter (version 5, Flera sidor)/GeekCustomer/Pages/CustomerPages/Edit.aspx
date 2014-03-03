@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="GeekCustomer.Pages.CustomerPages.Edit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Edit.aspx.cs" Inherits="GeekCustomer.Pages.CustomerPages.Edit" ViewStateMode="Disabled" %>
 
 <!DOCTYPE html>
 

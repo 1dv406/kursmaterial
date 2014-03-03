@@ -9,6 +9,8 @@ namespace GeekCustomer.Pages.CustomerPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            throw new Exception();
+
             // Hämta och visa (rätt)meddelande, om det finns något meddelande. (Meddelandet hämtas 
             // från en "temporär" sessionsvariabel som kapslas in av en "extension method" 
             // i App_Infrastructure/PageExtensions.)
