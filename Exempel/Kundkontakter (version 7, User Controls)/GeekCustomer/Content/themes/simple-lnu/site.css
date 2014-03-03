@@ -1,0 +1,422 @@
+﻿/* Styles
+-----------------------------------------------------------*/
+html, body, form, fieldset
+{
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+    form label
+    {
+        cursor: pointer;
+    }
+
+h1
+{
+    color: #333333;
+}
+
+body
+{
+    background-color: #FFFFFF;
+    font-family: "Times New Roman",Times,serif;
+    font-size: 76%;
+}
+
+a:link, a:visited
+{
+    background: none repeat scroll 0 0 #FFF500;
+    color: #333333;
+    text-decoration: none;
+}
+
+input
+{
+    font-family: "Times New Roman",Times,serif;
+    margin: 0;
+}
+
+#page
+{
+    margin: 0 auto;
+    padding: 0;
+    width: 652px;
+}
+
+header
+{
+    margin-bottom: 7px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+    header #header-group
+    {
+        border-left: 1px solid black;
+        height: 80px;
+        margin-bottom: 10px;
+        padding-left: 8px;
+        position: relative;
+    }
+
+    header #top
+    {
+        font-size: 1em;
+        font-style: italic;
+        line-height: 1.25em;
+        margin: -2px 0 0;
+        padding: 0;
+    }
+
+        header #top li
+        {
+            background: url("images/arrow-right.png") no-repeat scroll right center transparent;
+            display: inline;
+            margin: 0;
+            padding: 0 1.6em 0 0;
+        }
+
+            header #top li.last
+            {
+                background-image: none;
+                padding: 0;
+            }
+
+    header #logo-text
+    {
+        font-family: "Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 0.8em;
+    }
+
+        header #logo-text #small-logo-text
+        {
+            font-size: .5em;
+        }
+
+    header nav
+    {
+        clear: both;
+        color: #333;
+        overflow: hidden;
+        background: none repeat scroll 0 0 #DDDDD5;
+        width:100%;
+    }
+
+        header nav ul
+        {
+            font-size: 1em;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            width: 100%;
+        }
+
+            header nav ul li
+            {
+                float: left;
+                font-size: 1.5em;
+                font-weight: normal;
+                line-height: 1.5em;
+                list-style: none;
+                margin: 0 0 0 3px;
+                padding: 3px 0;
+            }
+
+                header nav ul li.selected
+                {
+                    background-color: #333;
+                }
+
+                header nav ul li:first-child
+                {
+                    margin-left: 0;
+                }
+
+                header nav ul li:last-child
+                {
+                    background-color: #DDDDD5;
+                    float: none;
+                    height: 1.5em;
+                    margin: 0;
+                    overflow: hidden;
+                    padding: 0 0 6px 0;
+                    width: auto;
+                }
+
+                header nav ul li a
+                {
+                    background: #DDDDD5 !important;
+                    color: #333 !important;
+                    padding: 7px 10px;
+                    text-decoration: none!important;
+                }
+
+                    header nav ul li a:hover
+                    {
+                        background-color: #333!important;
+                        color: #fff!important;
+                        text-decoration: none!important;
+                    }
+
+                    header nav ul li a:active
+                    {
+                        background-color: #333!important;
+                        color: #fff!important;
+                        text-decoration: none!important;
+                    }
+
+                header nav ul li.selected a
+                {
+                    background-color: #333!important;
+                    color: #fff!important;
+                }
+
+main
+{
+    font-size: 1.15em;
+}
+
+    main input
+    {
+        font-size: 100%;
+    }
+
+footer
+{
+    border-top: 1px solid #333333;
+    clear: both;
+    margin: 3em auto 1em;
+    padding: 0.43em 0;
+    width: 652px;
+}
+
+    footer a, footer a:link, footer a:visited
+    {
+        background: none;
+        float: left;
+    }
+
+    footer span
+    {
+        float: right;
+    }
+
+/* Styles for tables
+-----------------------------------------------------------*/
+table
+{
+    border: 1px solid #333;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 100%;
+}
+
+th
+{
+    background: #333;
+    color: #FFF;
+}
+
+td, th
+{
+    padding: 5px 3px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+tr:nth-child(even)
+{
+    background: #EEEEE8;
+}
+
+/* Styles for forms
+-----------------------------------------------------------*/
+form .editor-label
+{
+    margin: 0 0 .1em 0;
+    color: #666666;
+}
+
+form .editor-field
+{
+    margin: 0 0 1em 0;
+}
+
+/* Styles for lists
+-----------------------------------------------------------*/
+ul
+{
+    list-style-type: disc;
+    margin: 1em 0 1em 3em;
+}
+
+li
+{
+    display: list-item;
+    margin: .3em 0;
+}
+/* Styles for fieldset
+-----------------------------------------------------------*/
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 1em 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+    fieldset legend
+    {
+        font-size: 100%;
+        font-weight: bold;
+    }
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #f00;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Icon-ok styles
+-----------------------------------------------------------*/
+.icon-ok
+{
+    border: solid 1px #90ac13;
+    background: #eef4d3;
+    color: #6b800d;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+    min-height: 42px;
+    padding-left: 1em;
+    line-height: 42px;
+    vertical-align: middle;
+    margin-bottom: .5em;
+}
+
+    .icon-ok .close-button
+    {
+        float: right;
+        padding: 3px;
+        line-height: 10px;
+        text-align: center;
+        font-family: monospace;
+        font-size: 1.4em;
+        cursor: pointer;
+    }
+
+        .icon-ok .close-button:hover
+        {
+            background-color: rgba(255, 186, 186, 0.38);
+        }
+
+
+/* Additional styles
+-----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.hidden
+{
+    display: none;
+}
+
+td:last-child
+{
+    white-space: nowrap;
+}
+/* Additional styles
+----------------------------------------------------------*/
+input[type=text]
+{
+    width: 80%;
+}
+
+input.postal-code
+{
+    width: 4em;
+}
+
+td:last-child
+{
+    white-space: nowrap;
+}
+
+dl.customer-card
+{
+    margin-bottom: 1.5em;
+}
+
+    dl.customer-card dt
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    dl.customer-card dd
+    {
+        color: #808080;
+    }
+/* Contact styles
+----------------------------------------------------------*/
+.contact
+{
+    width: 492px;
+}
+
+    .contact > ul
+    {
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+    }
+
+        .contact > ul li
+        {
+            list-style: none;
+        }
+
+    .contact input[type=text]
+    {
+        width: 300px;
+    }
+/* Styles for forms
+-----------------------------------------------------------*/
+form .editor-label
+{
+    color: #666666;
+    margin: 0 0 .1em 0;
+}
+
+form .editor-field
+{
+    margin: 0 0 1em 0;
+}

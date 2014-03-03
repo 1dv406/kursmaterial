@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GeekCustomer.Pages.Shared.Site" ViewStateMode="Disabled" %>
+
+<%@ Register src="_MainNavigation.ascx" tagname="_MainNavigation" tagprefix="uc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContentPlaceHolder" runat="server">
+            Kundkontakter (version 7, User Controls)
+        </asp:ContentPlaceHolder>
+    </title>
+    <%: Styles.Render("~/Content/themes/simple-lnu") %>
+    <%: Scripts.Render("~/bundles/modernizr") %>
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server" />
+</head>
+<body>
+    <form id="theForm" runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+        </Scripts>
+    </asp:ScriptManager>
+    <div id="page">
+        <header>
+            <div id="header-group">
+                <ul id="top">
+                    <li>ASP.NET Web Forms (1DV406)</li>
+                    <li>Föreläsning</li>
+                    <li class="last">Exempel</li>
+                </ul>
+                <h1 id="logo-text">
+                    Kundkontakter <span id="small-logo-text">(version 7, User Controls)</span>
+                </h1>
+            </div>
+            <nav>
+                <uc1:_MainNavigation runat="server" />
+            </nav>
+        </header>
+        <main role="main">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server" >
+                </asp:ContentPlaceHolder>
+        </main>
+        <footer>
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/se/">
+                <img alt="Creative Commons Erkännande-IckeKommersiell-DelaLika 2.5 Sverige licens." src="~/Content/images/cc-by-nc-sa.png" runat="server" />
+            </a>
+            <span>Linnéuniversitetet | Fakulteten för teknik | Institutionen för datavetenskap</span>
+        </footer>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="ScriptContentPlaceHolder" runat="server" />
+</body>
+</html>

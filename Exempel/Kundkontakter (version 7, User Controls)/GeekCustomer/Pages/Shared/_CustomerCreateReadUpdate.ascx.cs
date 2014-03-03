@@ -4,9 +4,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using GeekCustomer.Model;
 
-namespace GeekCustomer.Pages.CustomerPages
+namespace GeekCustomer.Pages.Shared
 {
-    public partial class _CreateUpdate : System.Web.UI.UserControl
+    public partial class _CustomerCreateReadUpdate : System.Web.UI.UserControl
     {
         private Service _service;
 
@@ -17,7 +17,7 @@ namespace GeekCustomer.Pages.CustomerPages
             get { return _service ?? (_service = new Service()); }
         }
 
-        public FormViewMode EditMode
+        public FormViewMode ViewMode
         {
             get { return CustomerFormView.DefaultMode; }
             set { CustomerFormView.DefaultMode = value; }
@@ -25,7 +25,7 @@ namespace GeekCustomer.Pages.CustomerPages
 
         // The id parameter should match the DataKeyNames value set on the control
         // or be decorated with a value provider attribute, e.g. [QueryString]int id
-        public GeekCustomer.Model.Customer CustomerFormView_GetItem([RouteData]int id)
+        public Customer CustomerFormView_GetItem([RouteData]int id)
         {
             try
             {
@@ -44,8 +44,7 @@ namespace GeekCustomer.Pages.CustomerPages
             {
                 try
                 {
-                    Service service = new Service();
-                    service.SaveCustomer(customer);
+                    Service.SaveCustomer(customer);
 
                     // Spara (rätt)meddelande och dirigera om klienten till lista med kunder.
                     // (Meddelandet sparas i en "temporär" sessionsvariabel som kapslas 
