@@ -90,6 +90,11 @@ namespace GeekManyToMany.Model
             return _participants.SingleOrDefault(p => p.Id == id);
         }
 
+        public void DeleteParticipant(int id)
+        {
+            _participants.RemoveAt(_participants.FindIndex(p => p.Id == id));
+        }
+
         public void SaveParticipant(Participant participant)
         {
             if (participant.Id == 0)

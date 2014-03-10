@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GeekManyToMany.Pages.Shared.SiteMaster" ViewStateMode="Disabled" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="GeekManyToMany.Pages.Shared.SiteMaster" ViewStateMode="Enabled" %>
 
 <!DOCTYPE html>
 <html lang="en">
