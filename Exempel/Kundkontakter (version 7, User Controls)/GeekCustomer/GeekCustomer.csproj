@@ -103,6 +103,7 @@
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Pages\Shared\Error.aspx" />
     <Content Include="Pages\Shared\_ContactCreateReadUpdate.ascx" />
+    <Content Include="Pages\Shared\_ContactEdit.ascx" />
     <Content Include="Pages\Shared\_CustomerCreateReadUpdate.ascx" />
     <Content Include="Pages\Shared\_MainNavigation.ascx" />
     <Content Include="Scripts\app.js" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="Pages\Shared\_ContactCreateReadUpdate.ascx.designer.cs">
       <DependentUpon>_ContactCreateReadUpdate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shared\_ContactEdit.ascx.cs">
+      <DependentUpon>_ContactEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\_ContactEdit.ascx.designer.cs">
+      <DependentUpon>_ContactEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\_CustomerCreateReadUpdate.ascx.cs">
       <DependentUpon>_CustomerCreateReadUpdate.ascx</DependentUpon>

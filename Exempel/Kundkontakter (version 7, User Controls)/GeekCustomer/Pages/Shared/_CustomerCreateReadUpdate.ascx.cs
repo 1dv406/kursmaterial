@@ -8,8 +8,14 @@ namespace GeekCustomer.Pages.Shared
 {
     public partial class _CustomerCreateReadUpdate : System.Web.UI.UserControl
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private Service _service;
 
+        /// <summary>
+        /// 
+        /// </summary>
         private Service Service
         {
             // Ett Service-objekt skapas först då det behövs för första 
@@ -17,12 +23,51 @@ namespace GeekCustomer.Pages.Shared
             get { return _service ?? (_service = new Service()); }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public FormViewMode ViewMode
         {
             get { return CustomerFormView.DefaultMode; }
             set { CustomerFormView.DefaultMode = value; }
         }
 
+        /// <summary>
+        /// Ser till att samma mall används för redigering av befintliga kunder som för nya.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void CustomerFormView_Init(object sender, EventArgs e)
+        {
+            if (CustomerFormView.CurrentMode == FormViewMode.Edit)
+            {
+                CustomerFormView.EditItemTemplate = CustomerFormView.InsertItemTemplate;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void CustomerFormView_DataBound(object sender, EventArgs e)
+        {
+            if (CustomerFormView.CurrentMode == FormViewMode.Edit)
+            {
+                var saveLinkButton = (LinkButton)CustomerFormView.FindControl("SaveLinkButton");
+                saveLinkButton.CommandName = "Update";
+
+                var cancelHyperLink = (HyperLink)CustomerFormView.FindControl("CancelHyperLink");
+                var customer = (Customer)CustomerFormView.DataItem;
+                cancelHyperLink.NavigateUrl = GetRouteUrl("CustomerDetails", new { id = customer.CustomerId });
+            }
+        }
+
+        /// <summary>
+        /// Hämtar kund med angivet id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // The id parameter should match the DataKeyNames value set on the control
         // or be decorated with a value provider attribute, e.g. [QueryString]int id
         public Customer CustomerFormView_GetItem([RouteData]int id)
@@ -38,6 +83,10 @@ namespace GeekCustomer.Pages.Shared
             }
         }
 
+        /// <summary>
+        /// Lägger till en ny kund.
+        /// </summary>
+        /// <param name="customer"></param>
         public void CustomerFormView_InsertItem(Customer customer)
         {
             if (Page.ModelState.IsValid)
@@ -62,7 +111,7 @@ namespace GeekCustomer.Pages.Shared
         }
 
         /// <summary>
-        /// Uppdaterar en kunds kunduppgifter i databasen.
+        /// Uppdaterar kund.
         /// </summary>
         /// <param name="customerId"></param>
         public void CustomerFormView_UpdateItem(int customerId) // Parameterns namn måste överrensstämma med värdet DataKeyNames har.
