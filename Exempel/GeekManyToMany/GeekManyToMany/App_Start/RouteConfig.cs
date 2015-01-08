@@ -11,6 +11,7 @@ namespace GeekManyToMany
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.MapPageRoute("CourseDateDetails", "kurstillfalle/{id}", "~/Pages/ManyToManyPages/READ_FormViewWithNestedListView.aspx");
+            routes.MapPageRoute("CourseDateEdit", "kurstillfalle/{id}/redigera", "~/Pages/ManyToManyPages/DELETE_FormViewWithNestedListView.aspx");
             //routes.MapPageRoute("CourseDateDetails2", "kurstillfalle/enkelt", "~/Pages/ManyToManyPages/READ_Simple.aspx");
 
             routes.MapPageRoute("Default",  "",        "~/Pages/Start/Default.aspx");

@@ -45,7 +45,7 @@
     <ol class="round">
         <li>-</li>
     </ol>
-    <h3>Exempel - DELETE</h3>
+    <h3>Exempel - CREATE UPDATE DELETE</h3>
     <ol class="round">
         <li class="two">
             <h5>Literal- och Repeater-kontroller</h5>
@@ -56,7 +56,7 @@
         <li class="three">
             <h5>FormView-kontroll med nästlad ListView-kontroll</h5>
             I webbformuläret
-            <asp:HyperLink runat="server" NavigateUrl='<%$ RouteUrl:routename=CourseDateDetails, id=1 %>'>READ_FormViewWithNestedListView.aspx</asp:HyperLink>
+            <asp:HyperLink runat="server" NavigateUrl='<%$ RouteUrl:routename=CourseDateEdit, id=1 %>'>DELETET_FormViewWithNestedListView.aspx</asp:HyperLink>
             används händelsen ItemDataBound för att slå
             upp information och populera en kontroll i den nästlade ListView-kontrollen.
         </li>

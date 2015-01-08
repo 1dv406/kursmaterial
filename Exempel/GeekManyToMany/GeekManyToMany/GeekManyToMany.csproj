@@ -125,6 +125,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\ManyToManyPages\DELETE_FormViewWithNestedListView.aspx" />
     <Content Include="Pages\ManyToManyPages\DELETE_Repeater.aspx" />
     <Content Include="Pages\ManyToManyPages\READ_FormViewWithNestedListView.aspx" />
     <Content Include="Pages\ManyToManyPages\READ_Repeater.aspx" />
@@ -247,6 +248,13 @@
     <Compile Include="Model\Participant.cs" />
     <Compile Include="Model\Service.cs" />
     <Compile Include="Model\Student.cs" />
+    <Compile Include="Pages\ManyToManyPages\DELETE_FormViewWithNestedListView.aspx.cs">
+      <DependentUpon>DELETE_FormViewWithNestedListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ManyToManyPages\DELETE_FormViewWithNestedListView.aspx.designer.cs">
+      <DependentUpon>DELETE_FormViewWithNestedListView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ManyToManyPages\DELETE_Repeater.aspx.cs">
       <DependentUpon>DELETE_Repeater.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

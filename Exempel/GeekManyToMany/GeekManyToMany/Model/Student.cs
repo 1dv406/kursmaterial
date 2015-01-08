@@ -12,5 +12,10 @@ namespace GeekManyToMany.Model
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string EmailAddress { get; set; }
+
+        public string FullName
+        {
+            get { return String.Format("{0}, {1}", LastName, FirstName); }
+        }
     }
 }
